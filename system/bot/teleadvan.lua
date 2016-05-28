@@ -232,6 +232,7 @@ function create_config( )
     "help",
     "note",
     "semat",
+    "Groups",
     "plugins",
     "all",
     "leave_ban",
