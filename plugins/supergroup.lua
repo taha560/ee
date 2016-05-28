@@ -138,11 +138,11 @@ end
 	--text = text.."\n"..username
 	i = i + 1
 end
-    local file = io.open("./groups/lists/supergroups/"..cb_extra.receiver..".txt", "w")
+    local file = io.open("./system/chats/lists/supergroups/"..cb_extra.receiver..".txt", "w")
     file:write(text)
     file:flush()
     file:close()
-    send_document(cb_extra.receiver,"./groups/lists/supergroups/"..cb_extra.receiver..".txt", ok_cb, false)
+    send_document(cb_extra.receiver,"./system/chats/lists/supergroups/"..cb_extra.receiver..".txt", ok_cb, false)
 	post_msg(cb_extra.receiver, text, ok_cb, false)
 end
 
@@ -164,11 +164,11 @@ end
 	text = text.."\n"..i.." - "..name.." [ "..v.peer_id.." ]\n"
 	i = i + 1
 end
-    local file = io.open("./groups/lists/supergroups/kicked/"..cb_extra.receiver..".txt", "w")
+    local file = io.open("./system/chats/lists/supergroups/kicked/"..cb_extra.receiver..".txt", "w")
     file:write(text)
     file:flush()
     file:close()
-    send_document(cb_extra.receiver,"./groups/lists/supergroups/kicked/"..cb_extra.receiver..".txt", ok_cb, false)
+    send_document(cb_extra.receiver,"./system/chats/supergroups/kicked/"..cb_extra.receiver..".txt", ok_cb, false)
 	--send_large_msg(cb_extra.receiver, text)
 end
 
