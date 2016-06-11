@@ -559,7 +559,7 @@ local function groups_list(msg)
 			end
 		end
 	end
-    local file = io.open("./groups/lists/groups.txt", "w")
+    local file = io.open("./system/chats/lists/groups.txt", "w")
 	file:write(message)
 	file:flush()
 	file:close()
@@ -589,7 +589,7 @@ local function realms_list(msg)
 		end
 		message = message .. '- '.. name .. ' (' .. v .. ') ['..group_owner..'] \n {'..group_link.."}\n"
 	end
-	local file = io.open("./groups/lists/realms.txt", "w")
+	local file = io.open("./system/chats/lists/realms.txt", "w")
 	file:write(message)
 	file:flush()
 	file:close()
@@ -695,7 +695,7 @@ function run(msg, matches)
 		if matches[1] == 'log' and is_owner(msg) then
 		local receiver = get_receiver(msg)
 		savelog(msg.to.id, "log file created by owner/support/admin")
-		send_document(receiver,"./groups/logs/"..msg.to.id.."log.txt", ok_cb, false)
+		send_document(receiver,"./system/chats/logs/"..msg.to.id.."log.txt", ok_cb, false)
     end
 
 	if matches[1] == 'who' and msg.to.type == 'chat' and is_momod(msg) then
@@ -703,7 +703,7 @@ function run(msg, matches)
 		savelog(msg.to.id, name.." ["..msg.from.id.."] requested member list ")
 		local receiver = get_receiver(msg)
 		chat_info(receiver, returnids, {receiver=receiver})
-		local file = io.open("./groups/lists/"..msg.to.id.."memberlist.txt", "r")
+		local file = io.open("./system/chats/lists/"..msg.to.id.."memberlist.txt", "r")
 		text = file:read("*a")
         send_large_msg(receiver,text)
         file:close()
@@ -713,7 +713,7 @@ function run(msg, matches)
 		savelog(msg.to.id, name.." ["..msg.from.id.."] requested member list in a file")
 		local receiver = get_receiver(msg)
 		chat_info(receiver, returnids, {receiver=receiver})
-		send_document("chat#id"..msg.to.id,"./groups/lists/"..msg.to.id.."memberlist.txt", ok_cb, false)
+		send_document("chat#id"..msg.to.id,"./system/chats/lists/"..msg.to.id.."memberlist.txt", ok_cb, false)
 	end
 
 	if matches[1] == 'whois' and is_momod(msg) then
@@ -1011,24 +1011,24 @@ function run(msg, matches)
 		if matches[1] == 'list' and matches[2] == 'groups' then
 			if msg.to.type == 'chat' or msg.to.type == 'channel' then
 				groups_list(msg)
-				send_document("chat#id"..msg.to.id, "./groups/lists/groups.txt", ok_cb, false)
-				send_document("channel#id"..msg.to.id, "./groups/lists/groups.txt", ok_cb, false)
+				send_document("chat#id"..msg.to.id, "./system/chats/lists/groups.txt", ok_cb, false)
+				send_document("channel#id"..msg.to.id, "./system/chats/lists/groups.txt", ok_cb, false)
 				return "Group list created" --group_list(msg)
 			elseif msg.to.type == 'user' then
 				groups_list(msg)
-				send_document("user#id"..msg.from.id, "./groups/lists/groups.txt", ok_cb, false)
+				send_document("user#id"..msg.from.id, "./system/chats/lists/groups.txt", ok_cb, false)
 				return "Group list created" --group_list(msg)
 			end
 		end
 		if matches[1] == 'list' and matches[2] == 'realms' then
 			if msg.to.type == 'chat' or msg.to.type == 'channel' then
 				realms_list(msg)
-				send_document("chat#id"..msg.to.id, "./groups/lists/realms.txt", ok_cb, false)
-				send_document("channel#id"..msg.to.id, "./groups/lists/realms.txt", ok_cb, false)
+				send_document("chat#id"..msg.to.id, "./system/chats/lists/realms.txt", ok_cb, false)
+				send_document("channel#id"..msg.to.id, "./system/chats/lists/realms.txt", ok_cb, false)
 				return "Realms list created" --realms_list(msg)
 			elseif msg.to.type == 'user' then
 				realms_list(msg)
-				send_document("user#id"..msg.from.id, "./groups/lists/realms.txt", ok_cb, false)
+				send_document("user#id"..msg.from.id, "./system/chats/lists/realms.txt", ok_cb, false)
 				return "Realms list created" --realms_list(msg)
 			end
 		end
