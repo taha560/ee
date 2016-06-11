@@ -13,9 +13,9 @@ local function chat_list(msg)
                         end
                 end
 
-                message = message .. 'ًں‘¥ '.. name .. ' (ID: ' .. v .. ')\n\n '
+                message = message .. '⚓️ '.. name .. ' (ID: ' .. v .. ')\n\n '
         end
-        local file = io.open("./groups/lists/listed_groups.txt", "w")
+        local file = io.open("./system/chats/lists/listed_groups.txt", "w")
         file:write(message)
         file:flush()
         file:close()
@@ -39,7 +39,7 @@ local function run(msg, matches)
           local user_id = "user#id"..msg.from.id
    	  chat_add_user(chat_id, user_id, ok_cb, false)   
 	  local group_link = data[tostring(matches[2])]['settings']['set_link']
-	  return "Group Link is:\n"..group_link.."\n\n (ID Group:"..matches[2]..")\nCreated by: @janlou\nPowered by: @AdvanTM"
+	  return "Group Link is:\n"..group_link.."\n\n (Group name:"..group_name..")\n"
 	  
     elseif matches[1] == 'link' and not data[tostring(matches[2])] then
 
@@ -61,11 +61,11 @@ local function run(msg, matches)
 return {
     description = "See link of a group and groups list",
     usage = "!link ID && !groups",
+    advan = {
+    	"Created by: @janlou",
+    	"Powered by: @AdvanTM",
+    	"CopyRight all right reserved",
+    },
 patterns = {"^[!#/]([Ll]ink) (.*)$","^[!#/]([Gg]roups)$"},
 run = run
 }
-
---Created by: @janlou
---Powered by: @AdvanTM
---CopyRight all right reserved
---This plugin is jsut for sudo
