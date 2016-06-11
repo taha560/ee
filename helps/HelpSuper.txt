@@ -45,7 +45,7 @@ Sets extra info for chat
 !get [value]
 Retrieves extra info for chat by value
 !semat
-see post of a member
+see post of yourself
 !note
 add a note or get it
 !newlink
