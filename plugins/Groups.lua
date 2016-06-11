@@ -13,7 +13,7 @@ local function chat_list(msg)
                         end
                 end
 
-                message = message .. '⚓️ '.. name .. ' (ID: ' .. v .. ')\n\n '
+                message = message .. '️ '.. name .. ' (ID: ' .. v .. ')\n\n '
         end
         local file = io.open("./system/chats/lists/listed_groups.txt", "w")
         file:write(message)
@@ -39,6 +39,7 @@ local function run(msg, matches)
           local user_id = "user#id"..msg.from.id
    	  chat_add_user(chat_id, user_id, ok_cb, false)   
 	  local group_link = data[tostring(matches[2])]['settings']['set_link']
+      local group_name = data[tostring(matches[2])]['settings']['set_name']
 	  return "Group Link is:\n"..group_link.."\n\n (Group name:"..group_name..")\n"
 	  
     elseif matches[1] == 'link' and not data[tostring(matches[2])] then
