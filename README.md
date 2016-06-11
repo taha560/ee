@@ -22,10 +22,10 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 ***
 ```bash
 chmod +x fix.sh
-chmod +x advan.sh
+chmod +x start.sh
 ```
 ***
-`./advan.sh install`
+`./start.sh install`
 ***
 ***
 ```bash
@@ -36,11 +36,14 @@ cd bin
 ./luarocks-5.2 install luaexpat
 ```
 ***
-`./advan.sh install`
+`./start.sh install`
 ***
 ```bash
 tmux new-session -s script "bash steady.sh -t"
 ```
+```
+sudo service redis-server start redis-cli
+```
 ***
-`./advan.sh`
+`./start.sh`
 ***
