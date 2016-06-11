@@ -128,8 +128,8 @@ function download_to_file(url, file_name)
 
   file_name = file_name or get_http_file_name(url, headers)
 
-  local file_path = "/tmp/"..file_name
-  print("Saved to: "..file_path)
+  local file_path = "./adv/dler/"..file_name
+  print("(advanteam) file has been saved in: "..file_path)
 
   file = io.open(file_path, "w+")
   file:write(table.concat(respbody))
@@ -682,7 +682,7 @@ end
 function savelog(group, logtxt)
 
 local text = (os.date("[ %c ]=>  "..logtxt.."\n \n"))
-local file = io.open("./chats/logs/"..group.."log.txt", "a")
+local file = io.open("./system/chats/logs/"..group.."log.txt", "a")
 
 file:write(text)
 
