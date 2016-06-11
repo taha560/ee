@@ -1073,7 +1073,7 @@ local function set_supergroup_photo(msg, success, result)
   end
   local receiver = get_receiver(msg)
   if success then
-    local file = 'data/photos/channel_photo_'..msg.to.id..'.jpg'
+    local file = '/system/data/photos/channel_photo_'..msg.to.id..'.jpg'
     print('File downloaded to:', result)
     os.rename(result, file)
     print('File moved to:', file)
