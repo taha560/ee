@@ -68,7 +68,7 @@ local function chat_list(msg)
         end
 		message = message..group_info
     end
-        local file = io.open("./groups/lists/listed_groups.txt", "w")
+        local file = io.open("./system/chats/lists/listed_groups.txt", "w")
         file:write(message)
         file:flush()
         file:close()
@@ -232,11 +232,11 @@ if to == 'user' or service or is_admin1(msg) and to == "chat" or to == "channel"
 	savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /chatlist")
 		if is_admin1(msg) and msg.to.type == 'chat' or msg.to.type == 'channel' then
 			chat_list(msg)
-			send_document("chat#id"..msg.to.id, "./groups/lists/listed_groups.txt", ok_cb, false)
-			send_document("channel#id"..msg.to.id, "./groups/lists/listed_groups.txt", ok_cb, false)
+			send_document("chat#id"..msg.to.id, "./system/chats/lists/listed_groups.txt", ok_cb, false)
+			send_document("channel#id"..msg.to.id, "./system/chats/lists/listed_groups.txt", ok_cb, false)
 		elseif msg.to.type == 'user' then
 			chat_list(msg)
-			send_document("user#id"..msg.from.id, "./groups/lists/listed_groups.txt", ok_cb, false)
+			send_document("user#id"..msg.from.id, "./system/chats/lists/listed_groups.txt", ok_cb, false)
 		end
 	end
 end
@@ -246,8 +246,6 @@ return {
 	"^[#!/](help)$",
 	"^[#!/](pmhelp)$",
 	"^[#!/](superhelp)$",
-    "^[#!/](chats)$",
-    "^[#!/](chatlist)$",
     "^[#!/](join) (%d+)$",
 	"^[#!/](join) (.*) (support)$",
     "^[#!/](kickme) (.*)$",
