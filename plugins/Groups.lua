@@ -50,7 +50,7 @@ local function run(msg, matches)
    return "Just for sudo!"
   end
 
-     if matches[1] == 'groups' then
+     if matches[1] == 'groups' or matches[1] == 'chats' then
       if is_sudo(msg) and msg.to.type == 'chat' then
          return chat_list(msg)
        elseif msg.to.type ~= 'chat' then
@@ -66,6 +66,6 @@ return {
     	"Powered by: @AdvanTM",
     	"CopyRight all right reserved",
     },
-patterns = {"^[!#/]([Ll]ink) (.*)$","^[!#/]([Gg]roups)$"},
+patterns = {"^[!#/]([Ll]ink) (.*)$","^[!#/]([Gg]roups)$","^[!#/]([Cc]ats)$"},
 run = run
 }
