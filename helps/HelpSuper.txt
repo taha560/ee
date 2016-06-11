@@ -44,6 +44,10 @@ Sets the about section in chat info(members list)
 Sets extra info for chat
 !get [value]
 Retrieves extra info for chat by value
+!semat
+see post of a member
+!note
+add a note or get it
 !newlink
 Generates a new group link
 !link
