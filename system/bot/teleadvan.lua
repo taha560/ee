@@ -230,6 +230,8 @@ function create_config( )
     "savefile",
     "dler",
     "info",
+    "tosticker",
+    "tophoto",
     "fun",
     "help",
     "note",
