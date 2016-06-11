@@ -192,15 +192,15 @@ end
 -- Returns the config from config.lua file.
 -- If file doesn't exist, create it.
 function load_config( )
-  local f = io.open('./data/config.lua', "r")
+  local f = io.open('./system/data/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
-    print ("Created new config file: data/config.lua")
+    print ("Created new config file: system/data/config.lua")
     create_config()
   else
     f:close()
   end
-  local config = loadfile ("./data/config.lua")()
+  local config = loadfile ("./system/data/config.lua")()
   for v,user in pairs(config.sudo_users) do
     print("Sudo user: " .. user)
   end
