@@ -228,6 +228,7 @@ function create_config( )
     "addplug",
     "saveplug",
     "savefile",
+    "info",
     "fun",
     "help",
     "note",
