@@ -24,7 +24,7 @@ Set group name
 !rules
 Group rules
 !semat
-see post of a member
+see post of yourself
 !id
 return group id or user id
 !note
