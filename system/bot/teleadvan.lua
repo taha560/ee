@@ -228,6 +228,7 @@ function create_config( )
     "addplug",
     "saveplug",
     "savefile",
+    "dler",
     "info",
     "fun",
     "help",
