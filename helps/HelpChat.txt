@@ -25,6 +25,8 @@ Set group name
 Group rules
 !id
 return group id or user id
+!note
+add a note or get it
 !help
 Returns help text
 !lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
