@@ -10,7 +10,7 @@ local function run(msg, matches)
   file:write(text)
   file:flush()
   file:close()
-  return "با دستور زیر آخرین یادداشت خود را ببینید:\n!mynote\n\nیادداشت شما تغییر کرد به:\n"..text
+  return "You can use it:\n!mynote\n\nYour note has been changed to:\n"..text
  end
    
    local note = io.open("./system/note/"..msg.from.id..".txt", ok_cb, false)
@@ -19,7 +19,7 @@ local function run(msg, matches)
       mn = note:read("*all")
       return mn
     else
-     return "شما یادداشتی ثبت نکرده اید."
+     return "You havent any note."
   end
 end
   
