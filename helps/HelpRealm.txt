@@ -21,6 +21,10 @@ Get a list of members in group/realm
 Get a file of members in group/realm
 !type
 Get group type
+!semat
+see post of a member
+!note
+add a note or get it
 !kill chat [GroupID]
 Kick all memebers and delete group
 !kill realm [RealmID]
