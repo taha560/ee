@@ -505,7 +505,7 @@ local function run(msg, matches)
     if not is_sudo(msg) and is_owner(msg) then
      send_document(get_receiver(msg), "./adv/semat/owner.webp", ok_cb, false)
   end
-  if is_momod(msg) then
+  if not is_sudo(msg) and is_momod(msg) then
      send_document(get_receiver(msg), "./adv/semat/momod.webp", ok_cb, false)
   end
 			
