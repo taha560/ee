@@ -13,21 +13,14 @@ local function run(msg, matches)
   return "You can use it:\n!mynote\n\nYour note has been changed to:\n"..text
  end
    
-   local note = io.open("./system/note/"..msg.from.id..".txt", ok_cb, false)
-   local mn = file:read("*all")
+   local note = io.open("./adv/note/"..msg.from.id..".txt", "r")
+   local mn = note:read("*all")
    if matches[1] == "mynote" then
-      mn = note:read("*all")
       return mn
     else
      return "You havent any note."
   end
 end
-  
-  function problem(dict)
-    if dict.advan == nil or dict.advan == "" then
-     return "Dont change plugin⚠"
-    end
-   end
 
 return {
  description = "a plugin for save your note! and see it!",
