@@ -23,6 +23,8 @@ Set and locks group photo
 Set group name
 !rules
 Group rules
+!semat
+see post of a member
 !id
 return group id or user id
 !note
